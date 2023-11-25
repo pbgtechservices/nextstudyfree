@@ -4,25 +4,15 @@ import CollegeMainDetals from './collegeMainDetals'
 import CollegeSubDetails from './collegeSubDetails'
 import { Audio } from 'react-loader-spinner'
 import Header from '../../../components/header/header'
-import { useRouter } from 'next/navigation'
 import { callToBackend } from '@/app/controls/api'
-import Head from 'next/head'
+import { Inter } from 'next/font/google'
+
+const inter = Inter({ subsets: ['latin'] })
 
 const CollegeDetails = (props) => {
   const [loading, setLoading] = useState(false)
   let collegeId = props.params.collegeName
   const [selectedData, setSelecteddata] = useState()
-
-  let userInfoLocal
-  if (typeof window !== 'undefined') {
-    userInfoLocal = localStorage.getItem('userInfo')
-  }
-  let userInfo = userInfoLocal && JSON.parse(userInfoLocal)
-  const isEditAccess =
-    userInfo?.contactNumber === '9663881439' ||
-    userInfo?.contactNumber === '8553322965'
-
-  const navigate = useRouter()
 
   var thumbnails = selectedData?.collegeImages
     ?.filter((ds) => {
@@ -62,19 +52,15 @@ const CollegeDetails = (props) => {
 
   if (!selectedData) return <p></p>
 
-  const metadata = {
-    title:
-      ' Study Free | Get 100% Fee Concesion In Reputed PU Science College Based on Entrance Exam or 10th Result',
-  }
-
   return (
-    <div style={{ backgroundColor: 'var(--bg-light)' }}>
-      <Head>
+    <html lang="en" className="body-light">
+      <head>
         <title>
           {title && description
             ? `${title} | ${description}`
             : 'Study Free | Get 100% Fee Concession In Reputed PU Science College Based on Entrance Exam or 10th Result'}
         </title>
+        <link rel="icon" href="./favicon.ico" />
 
         {/* Twitter Meta Tags */}
         <meta name="twitter:url" content={canonicalURL} />
@@ -92,57 +78,41 @@ const CollegeDetails = (props) => {
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content={title} />
         <meta property="og:image:alt" content={description} />
-      </Head>
-      <Header setLoading={setLoading} showSearchCont={false} />
-      <div className="college-full-details-cont">
-        {loading && (
-          <div
-            className="college-full-details-cont mt-5 d-flex flex-column align-items-center"
-            style={{ backgroundColor: 'transparent' }}
-          >
-            <Audio
-              height="100"
-              width="100"
-              color="#4fa94d"
-              ariaLabel="audio-loading"
-              wrapperStyle={{}}
-              wrapperClass="wrapper-class"
-              visible={true}
-            />
-            <span className="loading-text">
-              Loading colleges details please wait..
-            </span>
-          </div>
-        )}
-
-        {!loading && selectedData && (
-          <div className="college-details-section">
-            {isEditAccess && (
+      </head>
+      <body className={inter.className}>
+        <div style={{ backgroundColor: 'var(--bg-light)' }}>
+          <Header setLoading={setLoading} showSearchCont={false} />
+          <div className="college-full-details-cont">
+            {loading && (
               <div
-                className="confirm-popup-btn-cont"
-                style={{ justifyContent: 'flex-end', width: '80%' }}
+                className="college-full-details-cont mt-5 d-flex flex-column align-items-center"
+                style={{ backgroundColor: 'transparent' }}
               >
-                <button
-                  className="auth-btn"
-                  onClick={() =>
-                    navigate.push(
-                      `/admin/register_college/${selectedData?.collegeName.replaceAll(
-                        ' ',
-                        '-',
-                      )}`,
-                    )
-                  }
-                >
-                  Edit
-                </button>
+                <Audio
+                  height="100"
+                  width="100"
+                  color="#4fa94d"
+                  ariaLabel="audio-loading"
+                  wrapperStyle={{}}
+                  wrapperClass="wrapper-class"
+                  visible={true}
+                />
+                <span className="loading-text">
+                  Loading colleges details please wait..
+                </span>
               </div>
             )}
-            <CollegeMainDetals selectedData={selectedData} />
-            <CollegeSubDetails selectedData={selectedData} />
+
+            {!loading && selectedData && (
+              <div className="college-details-section">
+                <CollegeMainDetals selectedData={selectedData} />
+                <CollegeSubDetails selectedData={selectedData} />
+              </div>
+            )}
           </div>
-        )}
-      </div>
-    </div>
+        </div>
+      </body>
+    </html>
   )
 }
 

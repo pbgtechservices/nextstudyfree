@@ -14,7 +14,6 @@
     font-size: 2rem;
     font-weight: 600;
     border-left: 0.6rem solid var(--bg-primary);
-    height: 3.6rem;
     display: flex;
     display: flex;
     flex-direction: column;
@@ -33,6 +32,9 @@
     display: flex;
     flex-direction: column;
     margin: 1rem 2rem;
+    text-wrap: wrap;
+    word-break: break-all;
+    width: 90%;
 
     span {
       padding: 0.3rem;
