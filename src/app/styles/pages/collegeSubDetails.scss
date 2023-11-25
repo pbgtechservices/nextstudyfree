@@ -1,0 +1,63 @@
+.college-sub-details-cont {
+  width: 80%;
+  margin-top: 2rem;
+  margin-right: 1rem;
+
+  @include devices(mobile) {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 0;
+    margin-right: 0;
+  }
+
+  .college-tab-cont {
+    height: 6.5rem;
+    padding: 2rem;
+    border-radius: 4rem;
+    box-shadow: 0px 0px 5px 0px rgba(204, 204, 204, 1);
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include devices(mobile) {
+      overflow-x: scroll;
+      padding: 4rem;
+      border-radius: 6rem;
+    }
+
+    .tabs {
+      font-size: 1.8rem;
+      background-color: var(--bg-light);
+      padding: 1rem 0;
+      border-radius: 4rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      min-width: 15rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none !important;
+      color: #000;
+
+      @include devices(mobile) {
+        margin-left: 2rem;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    .tabs-active {
+      background-color: var(--bg-primay-op);
+    }
+  }
+
+  .google-map-cont {
+    width: 100%;
+    height: 20rem;
+    margin-top: 1rem;
+  }
+}

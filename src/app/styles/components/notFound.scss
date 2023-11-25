@@ -1,0 +1,8 @@
+.notfound-cont {
+  padding-top: 10rem;
+  background-color: var(--white);
+
+  @include devices(mobile) {
+    padding-top: 16rem;
+  }
+}

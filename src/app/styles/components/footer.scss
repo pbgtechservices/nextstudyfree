@@ -1,0 +1,93 @@
+.footer-cont {
+  background-color: var(--black);
+  padding: 5rem;
+  display: flex;
+  justify-content: space-between;
+  border-top: 2px solid;
+
+  @include devices(mobile) {
+    flex-direction: column;
+  }
+
+  .contact-cont {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+
+    @include devices(mobile) {
+      width: 100%;
+    }
+
+    .co-header {
+      color: var(--bg-secondary);
+      font-size: 1.8rem;
+      color: var(--bg-secondary);
+      font-weight: 600;
+
+      @include devices(mobile) {
+        padding-top: 2rem;
+        margin-top: 2rem;
+        border-top: 0.1rem solid var(--white);
+      }
+    }
+
+    .img {
+      height: 10rem;
+      width: 15rem;
+    }
+
+    .co-content {
+      color: var(--white);
+      font-size: 1.6rem;
+      line-height: 3.4rem;
+    }
+  }
+
+  .links-cont {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+
+    @include devices(mobile) {
+      width: 100%;
+    }
+
+    .li-header {
+      font-size: 1.8rem;
+      color: var(--bg-secondary);
+      font-weight: 600;
+
+      @include devices(mobile) {
+        padding-top: 2rem;
+        margin-top: 2rem;
+        border-top: 0.1rem solid var(--white);
+      }
+    }
+
+    .colleges-list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .li-content {
+      color: var(--white);
+      font-size: 1.6rem;
+      line-height: 3.4rem;
+      cursor: pointer;
+      width: 50%;
+
+      @include devices(mobile) {
+        width: 100%;
+      }
+
+      &:hover {
+        color: var(--bg-secondary);
+      }
+    }
+
+    .active-loc {
+      color: var(--bg-primary);
+      font-weight: 600;
+    }
+  }
+}

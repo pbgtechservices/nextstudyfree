@@ -1,0 +1,134 @@
+@import './abstarct/mixins';
+@import './abstarct/variables';
+@import './base/base';
+@import './base/typography';
+
+@import './pages/auth.scss';
+@import './pages/collegeList.scss';
+@import './pages/home.scss';
+@import './pages/imageCrop.scss';
+@import './pages/collegeDetails.scss';
+@import './pages/collegeSubDetails.scss';
+@import './pages/details.scss';
+
+@import './components/footer.scss';
+@import './components/header.scss';
+@import './components/notFound.scss';
+
+.tags {
+  transition: opacity 50ms ease-in 0.25s, background-color 0.2s ease-in;
+  background-color: #fff;
+  color: #219653;
+  transform-origin: right top 0;
+  float: right;
+  padding: 10px 13px;
+  font-size: 15px;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+  border: none;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  position: fixed;
+  top: 50%;
+  right: 0;
+  border-radius: 0.8rem 0 0 0.8rem;
+  display: flex;
+  align-items: center;
+  .tag-icon {
+    font-size: 2rem;
+    margin-right: 0.5rem;
+  }
+}
+
+.modal-dialog {
+  max-width: 40%;
+
+  @include devices(mobile) {
+    max-width: 100%;
+  }
+  .modal-content {
+    height: calc(100vh - 20rem);
+
+    @include devices(mobile) {
+      height: calc(100vh - 30rem);
+    }
+  }
+  .modal-body {
+    width: 100%;
+    height: 90%;
+  }
+
+  .modal-footer {
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      padding: 0.5rem 2rem;
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+  }
+}
+
+.loading-text {
+  margin-top: 2rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.app-container {
+  background-color: var(--bg-light);
+  height: 100%;
+}
+
+.college-tab-cont {
+  height: 5.5rem;
+  padding: 1.5rem 4rem;
+  border-radius: 4rem;
+  box-shadow: 0px 0px 5px 0px rgba(204, 204, 204, 1);
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  width: 50rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include devices(mobile) {
+    overflow: hidden;
+    padding: 2rem;
+    border-radius: 6rem;
+    width: 90%;
+  }
+
+  .tabs {
+    font-size: 1.8rem;
+    background-color: var(--bg-light);
+    padding: 0.6rem 1rem;
+    border-radius: 4rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    min-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2rem;
+    transition: 0.5s all;
+    text-decoration: none !important;
+    color: #000;
+
+    @include devices(mobile) {
+      margin-left: 2rem;
+      min-width: 45%;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .tabs-active {
+    background-color: var(--bg-primay-op);
+  }
+}

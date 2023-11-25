@@ -1,0 +1,53 @@
+@import '~bootstrap/scss/bootstrap';
+
+.default-nav-btn {
+  border-radius: 2rem;
+  width: 100%;
+  height: 4.2rem;
+  border: 0.2rem solid var(--bg-primary);
+  color: var(--bg-primary) !important;
+  font-size: 1.6rem;
+  transition-property: width;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    width: 100%;
+    border: 0.2rem solid var(--bg-primary);
+    background-color: var(--bg-primary);
+    color: var(--white) !important;
+  }
+}
+
+.form-check-input {
+  height: 3rem;
+  width: 5rem !important;
+}
+
+.form-group label {
+  margin-top: 0.5rem;
+}
+
+.rdw-editor-wrapper {
+  box-sizing: content-box;
+  height: 40rem;
+  border: 0.2rem solid #ccc;
+  padding: 2rem;
+}
+
+.rdw-editor-main {
+  height: 80% !important;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+textarea {
+  min-height: 50rem !important;
+  max-height: 80rem;
+}

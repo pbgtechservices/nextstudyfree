@@ -1,0 +1,154 @@
+.auth-cont {
+  height: 100vh;
+  display: flex;
+  padding-top: 8rem;
+  background-color: var(--white);
+
+  .left-cont {
+    background-image: url('../../assets/images/authBanner.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100%;
+    width: 50%;
+    background-color: var(--white);
+
+    @include devices(mobile) {
+      display: none;
+    }
+  }
+
+  .right-cont {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: flex-start;
+    background-color: var(--white);
+    padding-top: 3rem;
+
+    @include devices(mobile) {
+      width: 100%;
+    }
+
+    .welcome-header {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .b-header {
+        font-size: 4rem;
+        letter-spacing: 0.2rem;
+        color: var(--bg-primary);
+      }
+
+      .b-header-2 {
+        // font-family: 'Rubik 80s Fade', cursive;
+        color: var(--bg-primary);
+        font-size: 2.6rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+      }
+    }
+
+    .auth-form-cont {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      .form-cont {
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @include devices(mobile) {
+          width: 85% !important;
+        }
+
+        .form-group {
+          margin: 2rem 0rem;
+          width: 48%;
+
+          @include devices(mobile) {
+            width: 100% !important;
+          }
+
+          label {
+            font-size: 1.5rem;
+            margin-left: 1rem;
+            font-weight: 600;
+          }
+          .form-control {
+            background-color: var(--white);
+            border: 0.2rem solid var(--bg-primary) !important;
+            outline: none !important;
+            padding: 1.2rem 2rem !important;
+            font-size: 1.4rem;
+            font-weight: 600;
+            box-shadow: none !important;
+            border-radius: 6rem;
+
+            @include devices(mobile) {
+              font-size: 2rem;
+            }
+          }
+        }
+
+        .auth-btn {
+          border-radius: 3rem;
+          width: 100%;
+          height: 5rem;
+          border: 0.2rem solid var(--bg-primary);
+          color: var(--bg-primary) !important;
+          font-size: 2rem;
+          transition-property: width;
+          transition-duration: 0.3s;
+          transition-timing-function: linear;
+          background-color: var(--bg-primary) !important;
+          color: var(--white) !important;
+          margin-top: 3rem;
+
+          @include devices(mobile) {
+            height: 7rem;
+            font-size: 2.4rem;
+            width: 100% !important;
+          }
+
+          &:hover {
+            width: 100%;
+            border: 0.2rem solid var(--bg-primary);
+            background-color: var(--bg-primary);
+            color: var(--white) !important;
+          }
+        }
+      }
+    }
+
+    .content {
+      font-size: 1.6rem;
+      text-align: center;
+
+      @include devices(mobile) {
+        font-size: 2.2rem;
+      }
+
+      .highlight {
+        color: var(--bg-primary);
+        text-decoration: underline;
+        font-size: 1.8rem;
+        font-weight: 600;
+        letter-spacing: 0.1rem;
+        cursor: pointer;
+        margin-left: 0.5rem;
+
+        @include devices(mobile) {
+          font-size: 2.4rem;
+        }
+      }
+    }
+  }
+}

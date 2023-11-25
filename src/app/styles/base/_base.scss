@@ -1,0 +1,23 @@
+html {
+  box-sizing: border-box;
+  font-size: 9px;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+#root {
+  height: 100%;
+}

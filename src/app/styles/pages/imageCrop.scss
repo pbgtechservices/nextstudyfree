@@ -1,0 +1,52 @@
+.cropped-images-cont {
+  display: flex;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  }
+
+  .croppped-img {
+    height: 200px;
+    width: 200px;
+    margin: 2rem 2rem 0 0;
+  }
+}
+
+.image-cropper-cont {
+  width: 40%;
+  height: 40rem;
+
+  @include devices(mobile) {
+    width: 100%;
+    height: 40rem;
+  }
+}
+
+.image-crop-btn {
+  border-radius: 3rem;
+  width: 20rem;
+  height: 5rem;
+  border: 0.2rem solid var(--bg-primary);
+  color: var(--bg-primary) !important;
+  font-size: 2rem;
+  transition-property: width;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+  background-color: var(--bg-primary) !important;
+  color: var(--white) !important;
+  margin-top: 3rem;
+
+  @include devices(mobile) {
+    height: 7rem;
+    font-size: 2.4rem;
+    width: 100% !important;
+  }
+}
