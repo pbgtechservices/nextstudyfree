@@ -1,4 +1,4 @@
-'use client'
+// import { Metadata } from "next";
 import React, { useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap'
 import Footer from '../../../../../components/footer/footer'
@@ -12,6 +12,11 @@ import { useRouter } from 'next/navigation'
 import clsx from 'clsx'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
+
+export const metadata = {
+  title:
+    ' Study Free',
+}
 
 const Home = (props) => {
   let userInfoLocal
