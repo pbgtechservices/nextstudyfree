@@ -1,4 +1,3 @@
-// import { Metadata } from "next";
 import React, { useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap'
 import Footer from '../../../../../components/footer/footer'
@@ -9,14 +8,32 @@ import CollegeList from './collegeList'
 import { noCollege } from '../../../../../assets/index'
 import { Audio } from 'react-loader-spinner'
 import { useRouter } from 'next/navigation'
+import Head from 'next/head'
 import clsx from 'clsx'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 
 export const metadata = {
-  title:
-    ' Study Free',
+  title: 'khjh',
+  description: 'hj',
 }
+
+// export async function generateMetadata() {
+  // read route params
+ 
+  // fetch data
+  // const product = await fetch(`https://.../${id}`).then((res) => res.json())
+ 
+  // optionally access and extend (rather than replace) parent metadata
+  // const previousImages = (await parent).openGraph?.images || []
+ 
+  // return {
+  //   title: 'product.title',
+    // openGraph: {
+    //   images: ['/some-specific-page-image.jpg', ...previousImages],
+    // },
+//   }
+// }
 
 const Home = (props) => {
   let userInfoLocal
@@ -115,6 +132,12 @@ const Home = (props) => {
   const pathName = route?.path
   return (
     <>
+    <Head>
+    <Head>
+        <meta property="og:title" content="ffg" />
+        <meta property="og:image" content="df" />
+      </Head>
+      </Head>
       <Header
         setSelectedColleges={setSelectedColleges}
         selectedColleges={selectedColleges}
