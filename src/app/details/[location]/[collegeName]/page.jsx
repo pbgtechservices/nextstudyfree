@@ -53,33 +53,7 @@ const CollegeDetails = (props) => {
   if (!selectedData) return <p></p>
 
   return (
-    <html lang="en" className="body-light">
-      <head>
-        <title>
-          {title && description
-            ? `${title} | ${description}`
-            : 'Study| Get 100% Fee Concession In Reputed PU Science College Based on Entrance Exam or 10th Result'}
-        </title>
-        <link rel="icon" href="./favicon.ico" />
-
-        {/* Twitter Meta Tags */}
-        <meta name="twitter:url" content={canonicalURL} />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={thumbnail} />
-
-        {/* Open Graph Meta Tags */}
-        <meta property="og:url" content={canonicalURL} />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:image" content={thumbnail} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content={title} />
-        <meta property="og:image:alt" content={description} />
-      </head>
-      <body className={inter.className}>
+    
         <div style={{ backgroundColor: 'var(--bg-light)' }}>
           <Header setLoading={setLoading} showSearchCont={false} />
           <div className="college-full-details-cont">
@@ -111,8 +85,7 @@ const CollegeDetails = (props) => {
             )}
           </div>
         </div>
-      </body>
-    </html>
+
   )
 }
 
