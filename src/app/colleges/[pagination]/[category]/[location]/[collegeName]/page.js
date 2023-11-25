@@ -19,19 +19,19 @@ export const metadata = {
 }
 
 // export async function generateMetadata() {
-  // read route params
- 
-  // fetch data
-  // const product = await fetch(`https://.../${id}`).then((res) => res.json())
- 
-  // optionally access and extend (rather than replace) parent metadata
-  // const previousImages = (await parent).openGraph?.images || []
- 
-  // return {
-  //   title: 'product.title',
-    // openGraph: {
-    //   images: ['/some-specific-page-image.jpg', ...previousImages],
-    // },
+// read route params
+
+// fetch data
+// const product = await fetch(`https://.../${id}`).then((res) => res.json())
+
+// optionally access and extend (rather than replace) parent metadata
+// const previousImages = (await parent).openGraph?.images || []
+
+// return {
+//   title: 'product.title',
+// openGraph: {
+//   images: ['/some-specific-page-image.jpg', ...previousImages],
+// },
 //   }
 // }
 
@@ -122,8 +122,8 @@ const Home = (props) => {
 
   let collegeDataFilteredLocation = location
     ? collegeDatas?.filter(
-        (obj) => obj?.location?.toLowerCase() === location?.toLowerCase(),
-      )
+      (obj) => obj?.location?.toLowerCase() === location?.toLowerCase(),
+    )
     : collegeDatas
 
   let final = collegeDataFilteredLocation
@@ -132,11 +132,9 @@ const Home = (props) => {
   const pathName = route?.path
   return (
     <>
-    <Head>
-    <Head>
+      <Head>
         <meta property="og:title" content="ffg" />
         <meta property="og:image" content="df" />
-      </Head>
       </Head>
       <Header
         setSelectedColleges={setSelectedColleges}
@@ -187,8 +185,8 @@ const Home = (props) => {
                       collegeName && location
                         ? `/colleges/1/${d?.College_Category}/${location}/${collegeName}`
                         : location
-                        ? `/colleges/1/${d?.College_Category}/${location}`
-                        : `/colleges/1/${d?.College_Category}`
+                          ? `/colleges/1/${d?.College_Category}/${location}`
+                          : `/colleges/1/${d?.College_Category}`
                     }
                   >
                     {d?.College_Category}
