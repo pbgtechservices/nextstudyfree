@@ -103,8 +103,8 @@ const Home = (props) => {
 
   let collegeDataFilteredLocation = location
     ? collegeDatas?.filter(
-        (obj) => obj?.location?.toLowerCase() === location?.toLowerCase(),
-      )
+      (obj) => obj?.location?.toLowerCase() === location?.toLowerCase(),
+    )
     : collegeDatas
 
   let final = collegeDataFilteredLocation
@@ -113,124 +113,115 @@ const Home = (props) => {
   const pathName = route?.path
   return (
     <>
-      <html lang="en" className="body-light">
-        <head>
-          <title>
-            Study Free | Get 100% Fee Concesion In Reputed PU Science College
-            Based on Entrance Exam or 10th Result
-          </title>
-          <link rel="icon" href="./favicon.ico" />
-        </head>
-        <body className={inter.className}>
-          <Header
-            setSelectedColleges={setSelectedColleges}
-            selectedColleges={selectedColleges}
-            setLoading={setLoading}
-            showSearchCont={true}
-            collegeName={collegeName}
-            location={location}
-            locationData={locationData}
-          />
 
-          <div className="home-cont">
-            {loading ? (
-              <div
-                className="home-cont d-flex flex-column align-items-center"
-                style={{ backgroundColor: 'transparent' }}
-              >
-                <Audio
-                  height="100"
-                  width="100"
-                  color="#4fa94d"
-                  ariaLabel="audio-loading"
-                  wrapperStyle={{ marginTop: '5rem' }}
-                  wrapperClass="wrapper-class"
-                  visible={true}
-                />
-                <span className="loading-text">
-                  Loading colleges please wait..
-                </span>
-              </div>
-            ) : (
-              <>
-                <div className="college-tab-cont">
-                  {categories
-                    ?.sort((a, b) => Number(a.priority) - Number(b.priority))
-                    ?.map((d, index) => (
-                      <a
-                        key={index}
-                        className={clsx(
-                          'tabs',
-                          category?.replace('%20', ' ') === d?.College_Category
-                            ? 'tabs-active'
-                            : '',
-                        )}
-                        onClick={() => {
-                          window.scrollTo({ top: 615, behavior: 'smooth' })
-                          setSeed(Math.random())
-                        }}
-                        href={
-                          collegeName && location
-                            ? `/colleges/1/${d?.College_Category}/${location}/${collegeName}`
-                            : location
-                            ? `/colleges/1/${d?.College_Category}/${location}`
-                            : `/colleges/1/${d?.College_Category}`
-                        }
-                      >
-                        {d?.College_Category}
-                      </a>
-                    ))}
-                </div>
+      <Header
+        setSelectedColleges={setSelectedColleges}
+        selectedColleges={selectedColleges}
+        setLoading={setLoading}
+        showSearchCont={true}
+        collegeName={collegeName}
+        location={location}
+        locationData={locationData}
+      />
 
-                <Container className="container">
-                  {!!final?.length ? (
-                    <CollegeList
-                      key={seed}
-                      collegeData={final}
-                      loading={loading}
-                      deleteCollege={deleteCollege}
-                      collegeName={collegeName}
-                      category={category}
-                      location={location}
-                      count={totalCount}
-                      pagination={pagination}
-                    />
-                  ) : (
-                    <div className="no-collge-cont">
-                      <Image
-                        src={noCollege}
-                        alt=""
-                        className="no-college-found"
-                      />
-                      <span className="no-colleges-text">
-                        No {category} Colleges Found
-                      </span>
-                    </div>
-                  )}
-                </Container>
-
-                {!loading && !userInfo && (
-                  <div className="auth-cont-home">
-                    <Auth
-                      isDefaultRegister={true}
-                      registerHeaderText="To write Entrance exam, View other details register first"
-                      isFromHomeScreen={true}
-                    />
-                  </div>
-                )}
-              </>
-            )}
-          </div>
-
-          {!loading && pathName !== 'FilterScreen' && (
-            <Footer
-              locationData={locationData}
-              loading={loading}
-              setSelectedColleges={setSelectedColleges}
+      <div className="home-cont">
+        {loading ? (
+          <div
+            className="home-cont d-flex flex-column align-items-center"
+            style={{ backgroundColor: 'transparent' }}
+          >
+            <Audio
+              height="100"
+              width="100"
+              color="#4fa94d"
+              ariaLabel="audio-loading"
+              wrapperStyle={{ marginTop: '5rem' }}
+              wrapperClass="wrapper-class"
+              visible={true}
             />
-          )}
-        </body>
-      </html>
+            <span className="loading-text">
+              Loading colleges please wait..
+            </span>
+          </div>
+        ) : (
+          <>
+            <div className="college-tab-cont">
+              {categories
+                ?.sort((a, b) => Number(a.priority) - Number(b.priority))
+                ?.map((d, index) => (
+                  <a
+                    key={index}
+                    className={clsx(
+                      'tabs',
+                      category?.replace('%20', ' ') === d?.College_Category
+                        ? 'tabs-active'
+                        : '',
+                    )}
+                    onClick={() => {
+                      window.scrollTo({ top: 615, behavior: 'smooth' })
+                      setSeed(Math.random())
+                    }}
+                    href={
+                      collegeName && location
+                        ? `/colleges/1/${d?.College_Category}/${location}/${collegeName}`
+                        : location
+                          ? `/colleges/1/${d?.College_Category}/${location}`
+                          : `/colleges/1/${d?.College_Category}`
+                    }
+                  >
+                    {d?.College_Category}
+                  </a>
+                ))}
+            </div>
+
+            <Container className="container">
+              {!!final?.length ? (
+                <CollegeList
+                  key={seed}
+                  collegeData={final}
+                  loading={loading}
+                  deleteCollege={deleteCollege}
+                  collegeName={collegeName}
+                  category={category}
+                  location={location}
+                  count={totalCount}
+                  pagination={pagination}
+                />
+              ) : (
+                <div className="no-collge-cont">
+                  <Image
+                    src={noCollege}
+                    alt=""
+                    className="no-college-found"
+                  />
+                  <span className="no-colleges-text">
+                    No {category} Colleges Found
+                  </span>
+                </div>
+              )}
+            </Container>
+
+            {!loading && !userInfo && (
+              <div className="auth-cont-home">
+                <Auth
+                  isDefaultRegister={true}
+                  registerHeaderText="To write Entrance exam, View other details register first"
+                  isFromHomeScreen={true}
+                />
+              </div>
+            )}
+          </>
+        )}
+      </div>
+
+      {!loading && pathName !== 'FilterScreen' && (
+        <Footer
+          locationData={locationData}
+          loading={loading}
+          setSelectedColleges={setSelectedColleges}
+        />
+      )}
+
     </>
   )
 }

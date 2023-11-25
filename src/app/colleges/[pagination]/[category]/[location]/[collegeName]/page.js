@@ -113,15 +113,6 @@ const Home = (props) => {
   const pathName = route?.path
   return (
     <>
-      <html lang="en" className="body-light">
-        <head>
-          <title>
-            Study Free | Get 100% Fee Concesion In Reputed PU Science College
-            Based on Entrance Exam or 10th Result
-          </title>
-          <link rel="icon" href="./favicon.ico" />
-        </head>
-        <body className={inter.className}>
           <Header
             setSelectedColleges={setSelectedColleges}
             selectedColleges={selectedColleges}
@@ -229,8 +220,6 @@ const Home = (props) => {
               setSelectedColleges={setSelectedColleges}
             />
           )}
-        </body>
-      </html>
     </>
   )
 }

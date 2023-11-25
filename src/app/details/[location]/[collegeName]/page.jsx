@@ -58,7 +58,7 @@ const CollegeDetails = (props) => {
         <title>
           {title && description
             ? `${title} | ${description}`
-            : 'Study Free | Get 100% Fee Concession In Reputed PU Science College Based on Entrance Exam or 10th Result'}
+            : 'Study| Get 100% Fee Concession In Reputed PU Science College Based on Entrance Exam or 10th Result'}
         </title>
         <link rel="icon" href="./favicon.ico" />
 
