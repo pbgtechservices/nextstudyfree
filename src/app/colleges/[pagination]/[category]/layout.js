@@ -4,7 +4,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title:
-    'Free | Get 100% Fee Concesion In Reputed PU Science College Based on Entrance Exam or 10th Result',
+    'Study Free | Get 100% Fee Concesion In Reputed PU Science College Based on Entrance Exam or 10th Result',
 }
 
 export default function RootLayout({ children }) {
