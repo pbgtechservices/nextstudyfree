@@ -12,9 +12,6 @@ import { useRouter } from 'next/navigation'
 import clsx from 'clsx'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
 
 const Home = (props) => {
   let userInfoLocal
@@ -103,8 +100,8 @@ const Home = (props) => {
 
   let collegeDataFilteredLocation = location
     ? collegeDatas?.filter(
-      (obj) => obj?.location?.toLowerCase() === location?.toLowerCase(),
-    )
+        (obj) => obj?.location?.toLowerCase() === location?.toLowerCase(),
+      )
     : collegeDatas
 
   let final = collegeDataFilteredLocation
@@ -113,7 +110,6 @@ const Home = (props) => {
   const pathName = route?.path
   return (
     <>
-
       <Header
         setSelectedColleges={setSelectedColleges}
         selectedColleges={selectedColleges}
@@ -139,9 +135,7 @@ const Home = (props) => {
               wrapperClass="wrapper-class"
               visible={true}
             />
-            <span className="loading-text">
-              Loading colleges please wait..
-            </span>
+            <span className="loading-text">Loading colleges please wait..</span>
           </div>
         ) : (
           <>
@@ -165,8 +159,8 @@ const Home = (props) => {
                       collegeName && location
                         ? `/colleges/1/${d?.College_Category}/${location}/${collegeName}`
                         : location
-                          ? `/colleges/1/${d?.College_Category}/${location}`
-                          : `/colleges/1/${d?.College_Category}`
+                        ? `/colleges/1/${d?.College_Category}/${location}`
+                        : `/colleges/1/${d?.College_Category}`
                     }
                   >
                     {d?.College_Category}
@@ -189,11 +183,7 @@ const Home = (props) => {
                 />
               ) : (
                 <div className="no-collge-cont">
-                  <Image
-                    src={noCollege}
-                    alt=""
-                    className="no-college-found"
-                  />
+                  <Image src={noCollege} alt="" className="no-college-found" />
                   <span className="no-colleges-text">
                     No {category} Colleges Found
                   </span>
@@ -221,7 +211,6 @@ const Home = (props) => {
           setSelectedColleges={setSelectedColleges}
         />
       )}
-
     </>
   )
 }
