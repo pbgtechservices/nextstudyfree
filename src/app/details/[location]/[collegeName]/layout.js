@@ -38,7 +38,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
       title && description
         ? `${title} | ${description}`
         : 'Study | Get 100% Fee Concession In Reputed PU Science College Based on Entrance Exam or 10th Result',
-    favicon: './favicon.ico',
+    favicon: thumbnail,
     canonicalURL: 'your_canonical_url_here', // Replace with your actual canonical URL
     twitter: {
       url: canonicalURL,
