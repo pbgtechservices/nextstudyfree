@@ -31,7 +31,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
   const title = selectedData?.Open_Graph_Title || selectedData?.collegeName
   const description = selectedData?.Open_Graph_Description
   const canonicalURL = 'your_canonical_url_here' // Replace with your actual canonical URL
-  const thumbnail = thumbnails || collegeImages
+  const thumbnail = [thumbnails] || [collegeImages]
 
   return {
     title:
@@ -44,13 +44,13 @@ export async function generateMetadata({ params, searchParams }, parent) {
       url: canonicalURL,
       title: title,
       description: description,
-      image: thumbnail,
+      image: [...thumbnail],
     },
     openGraph: {
       url: canonicalURL,
       title: title,
       description: description,
-      image: thumbnail,
+      image: [...thumbnail],
       imageWidth: 1200,
       imageHeight: 630,
       type: 'website',
