@@ -5,6 +5,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title:
     'Study Free | Get 100% Fee Concesion In Reputed PU Science College Based on Entrance Exam or 10th Result',
+    // favicon: './favicon.ico',
 }
 
 export default function RootLayout({ children }) {
@@ -23,7 +24,7 @@ export default function RootLayout({ children }) {
             ? `${title} | ${description}`
             : 'Study| Get 100% Fee Concession In Reputed PU Science College Based on Entrance Exam or 10th Result'}
         </title>
-        <link rel="icon" href="./favicon.ico" />
+        
 
         <meta name="twitter:url" content={canonicalURL} />
         <meta name="twitter:title" content={title} />

@@ -25,6 +25,7 @@ const CollegeMainDetals = (props) => {
           alt=""
           width="100"
           height="300"
+          priority={true}
         />
         <div className="college-details-cont">
           <div className="college-cont-1">
